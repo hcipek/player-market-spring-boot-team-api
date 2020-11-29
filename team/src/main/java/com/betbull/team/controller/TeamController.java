@@ -22,7 +22,7 @@ public class TeamController {
 	@Autowired
 	private TeamService teamService;
 	
-	@PostMapping("/create")
+	@PostMapping("/createteam")
 	public DefaultTeamResponse createPlayer(@RequestBody MultiTeamRequest request) {
 		return teamService.createTeam(request);
 	}
@@ -47,12 +47,12 @@ public class TeamController {
 		return teamService.getAllPassiveTeams();
 	}
 	
-	@PostMapping("/activate")
+	@PostMapping("/activateteambyid")
 	public DefaultTeamResponse activateTeam(@RequestParam("id") Long id) {
 		return teamService.activateTeamById(id);
 	}
 	
-	@PostMapping("/passivate")
+	@PostMapping("/passivateteambyid")
 	public DefaultTeamResponse passivateTeam(@RequestParam("id") Long id) {
 		return teamService.passivateTeamById(id);
 	}
@@ -62,7 +62,7 @@ public class TeamController {
 		return teamService.deleteTeamById(id);
     }
 	
-	@DeleteMapping("/deletepassiveteams")
+	@DeleteMapping("/deleteallpassiveteams")
 	public DefaultTeamResponse deletePassiveTeams(){
 		return teamService.deleteAllPassiveTeams();
     }
