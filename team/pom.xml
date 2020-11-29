@@ -66,7 +66,7 @@
 		                    <goal>repackage</goal>
 		                </goals>
 		                <configuration>
-		                    <mainClass>com.betbull.player.PlayerApplication</mainClass>
+		                    <mainClass>com.betbull.player.TeamApplication</mainClass>
 		                    <outputDirectory>${project.basedir}/docker</outputDirectory>
 		                </configuration>
 		            </execution>

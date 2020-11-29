@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.betbull.team.model.DefaultTeamResponse;
 import com.betbull.team.model.MultiTeamRequest;
 import com.betbull.team.model.MultiTeamResponse;
+import com.betbull.team.model.TeamRequestDto;
 import com.betbull.team.service.TeamService;
 
 @RestController
@@ -26,9 +27,9 @@ public class TeamController {
 		return teamService.createTeam(request);
 	}
 	
-	@GetMapping("/getteambyname")
-	public MultiTeamResponse getTeamByName(@RequestParam("name") String name) {
-		return teamService.getTeamByName(name);
+	@PostMapping("/getteambyname")
+	public MultiTeamResponse getTeamByName(@RequestBody TeamRequestDto request) {
+		return teamService.getTeamByName(request.getName());
 	}
 	
 	@GetMapping("/getallteams")
